@@ -4,6 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -49,15 +52,15 @@ export default function RegisterPage() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="mb-2 block text-sm text-[#00ffaa]/80">
+            <Label variant="terminal">
               First Name
-            </label>
-            <input
+            </Label>
+            <Input
+              variant="terminal"
               type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
-              className="w-full rounded border border-[#00ffaa]/30 bg-black/50 px-4 py-2 text-white placeholder:text-gray-500 focus:border-[#00ffaa] focus:outline-none"
               placeholder="John"
             />
           </div>
@@ -66,42 +69,42 @@ export default function RegisterPage() {
             <label className="mb-2 block text-sm text-[#00ffaa]/80">
               Last Name
             </label>
-            <input
+            <Input
+              variant="terminal"
               type="text"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
-              className="w-full rounded border border-[#00ffaa]/30 bg-black/50 px-4 py-2 text-white placeholder:text-gray-500 focus:border-[#00ffaa] focus:outline-none"
               placeholder="Doe"
             />
           </div>
         </div>
 
         <div>
-          <label className="mb-2 block text-sm text-[#00ffaa]/80">
+          <Label variant="terminal">
             Email
-          </label>
-          <input
+          </Label>
+          <Input
+            variant="terminal"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full rounded border border-[#00ffaa]/30 bg-black/50 px-4 py-2 text-white placeholder:text-gray-500 focus:border-[#00ffaa] focus:outline-none"
             placeholder="user@example.com"
           />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm text-[#00ffaa]/80">
+          <Label variant="terminal">
             Password
-          </label>
-          <input
+          </Label>
+          <Input
+            variant="terminal"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             minLength={8}
-            className="w-full rounded border border-[#00ffaa]/30 bg-black/50 px-4 py-2 text-white placeholder:text-gray-500 focus:border-[#00ffaa] focus:outline-none"
             placeholder="••••••••"
           />
         </div>
@@ -112,13 +115,9 @@ export default function RegisterPage() {
           </div>
         )}
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full rounded border-2 border-[#00ffaa] bg-[#00ffaa] px-4 py-2 font-semibold text-black transition-colors hover:bg-transparent hover:text-[#00ffaa] disabled:opacity-50"
-        >
+        <Button variant="terminal" type="submit" disabled={loading}>
           {loading ? "..." : "&gt; CREATE_ACCOUNT"}
-        </button>
+        </Button>
       </form>
 
       <p className="mt-4 text-center text-sm text-gray-400">

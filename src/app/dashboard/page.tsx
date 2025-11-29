@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -55,8 +58,9 @@ export default function DashboardPage() {
 
             {/* URL Prompt and Input */}
             <div className="flex flex-col gap-2">
-              <label className="text-white">URL: target_documentation_source</label>
-              <input
+              <Label variant="terminal">URL: target_documentation_source</Label>
+              <Input
+                variant="terminal"
                 type="text"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
@@ -67,14 +71,13 @@ export default function DashboardPage() {
             </div>
 
             {/* Execute Button */}
-            <button
+            <Button
+              variant="terminal"
               onClick={handleExecute}
               disabled={loading}
-              className="group relative mt-4 flex items-center gap-2 rounded border-2 border-[#00ffaa] bg-[#00ffaa] px-6 py-3 font-mono text-sm font-semibold text-black transition-all hover:bg-transparent hover:text-[#00ffaa] disabled:opacity-50"
             >
-              <span className="relative h-2 w-2 rounded-full bg-pink-500 shadow-[0_0_8px_rgba(255,20,147,0.8)]" />
-              <span className="relative z-10">./execute --start-chat</span>
-            </button>
+              ./execute --start-chat
+            </Button>
           </div>
         </div>
       </div>
