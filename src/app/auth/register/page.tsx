@@ -29,14 +29,14 @@ export default function RegisterPage() {
         name: `${firstName} ${lastName}`,
         firstName: firstName || "",
         lastName: lastName || "",
-      } as any);
+      } as Parameters<typeof authClient.signUp.email>[0] & { firstName: string; lastName: string });
 
       if (result.error) {
         setError(result.error.message || "Registration failed");
       } else {
         router.push("/dashboard");
       }
-    } catch (err) {
+    } catch {
       setError("An unexpected error occurred");
     } finally {
       setLoading(false);

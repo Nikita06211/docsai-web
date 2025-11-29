@@ -124,7 +124,7 @@ function ChatContent() {
       };
 
       setMessages((prev) => [...prev, botMessage]);
-    } catch (_error) {
+    } catch {
       setMessages((prev) => [
         ...prev,
         {
