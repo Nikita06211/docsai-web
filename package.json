@@ -11,7 +11,7 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "pages:build": "npx @cloudflare/next-on-pages@1",
+    "pages:build": "next build && npx @cloudflare/next-on-pages@1",
     "preview": "npm run pages:build && wrangler pages dev .vercel/output/static",
     "install:cf": "npm install --legacy-peer-deps"
   },
