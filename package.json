@@ -12,7 +12,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "pages:build": "npx @cloudflare/next-on-pages@1",
-    "preview": "npm run pages:build && wrangler pages dev .vercel/output/static"
+    "preview": "npm run pages:build && wrangler pages dev .vercel/output/static",
+    "install:cf": "npm install --legacy-peer-deps"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
@@ -26,7 +27,7 @@
     "drizzle-kit": "^0.31.7",
     "drizzle-orm": "^0.44.7",
     "lucide-react": "^0.555.0",
-    "next": "16.0.5",
+    "next": "^15.0.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-syntax-highlighter": "^16.1.0",
