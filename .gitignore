@@ -35,6 +35,16 @@ yarn-error.log*
 
 # vercel
 .vercel
+.wrangler
+
+# cloudflare pages
+.cloudflare
+
+# cloudflare workers
+.workers
+
+# cloudflare pages
+.pages
 
 # typescript
 *.tsbuildinfo
